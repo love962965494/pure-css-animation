@@ -1,0 +1,56 @@
+:root {
+  --bgd-color: #cbe9f4;
+  --light: #93d5eb;
+  --medium: #66bbd8;
+  --dark: #4da2bb;
+  --bush: #fff;
+  --trunk: #c2653c;
+  --trunk2: #9d5d5d;
+  --cloud: #fff;
+  --sun: transparent;
+  --rabbit: #fff;
+}
+
+*,
+*::before,
+*::after {
+  position: absolute;
+  transition: background 4s ease;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  background-color: var(--bgd-color);
+}
+
+#container {
+  position: relative;
+  width: 800px;
+  height: 450px;
+}
+
+.sun {
+  top: -20px;
+  left: 180px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--sun);
+}
+
+.base {
+  left: 50%;
+  bottom: 50px;
+  width: 650px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: var(--bush);
+  transform: translateX(-50%);
+}

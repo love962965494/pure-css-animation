@@ -1,3 +1,13 @@
+:root {
+  --bg-color: #fff;
+  --font-color: #000;
+}
+
+[data-theme="dark"] {
+  --bg-color: #000;
+  --font-color: #fff;
+}
+
 body {
   margin: 0;
   padding: 0;

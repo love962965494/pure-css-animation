@@ -1,0 +1,149 @@
+.cloud-group {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cloud {
+  top: 40px;
+  left: 50px;
+  width: 80px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: var(--cloud);
+  animation: clouds 10s linear infinite;
+}
+
+@keyframes clouds {
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.weather-container {
+  width: 100%;
+  height: 400px;
+}
+
+.snow {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 2s ease;
+  animation: snow 5s linear infinite;
+  opacity: 0;
+}
+
+@for $i from 1 through 20 {
+  $top: random(30) + px;
+  $left: random(70) + px;
+
+  .snow:nth-of-type(#{$i}) {
+    top: $top;
+    left: $left;
+    animation-delay: random(10) + s;
+  }
+}
+
+.rain {
+  display: none;
+  width: 4px;
+  height: 8px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-color: #eaf9fe;
+  background-color: #eaf9fe;
+  transform: rotate(-30deg);
+  transition: all 2s ease;
+  animation: drops 1s linear infinite;
+  opacity: 0;
+}
+
+$height: 200px;
+$width: 70px;
+@for $i from 1 through 30 {
+  .rain:nth-child(#{$i}) {
+    top: random(30) + px;
+    left: random($width) + px;
+    animation-delay: 0.1s * $i;
+  }
+}
+
+@keyframes drops {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(20px, $height, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes snow {
+  0% {
+    margin-top: 0px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    margin-left: 20px;
+  }
+  100% {
+    margin-top: 200px;
+    opacity: 0;
+  }
+}
+
+.cloud:nth-child(2) {
+  left: 70px;
+  top: 65px;
+  width: 90px;
+}
+
+.cloud:nth-child(3) {
+  left: 330px;
+  top: 30px;
+  width: 80px;
+  height: 25px;
+}
+
+.cloud:nth-child(4) {
+  left: 290px;
+  top: 60px;
+  width: 90px;
+}
+
+.cloud:nth-child(5) {
+  left: 480px;
+  top: 40px;
+  width: 100px;
+}
+
+.cloud:nth-child(7) {
+  left: 520px;
+  top: 105px;
+  width: 110px;
+}
+
+.cloud:nth-child(8) {
+  left: 660px;
+  top: 160px;
+  width: 70px;
+}

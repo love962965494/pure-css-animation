@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Kalam');
+
+.App {
+  text-align: center;
+  font-family: 'Kalam', cursive;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  min-width: 1200px;
+  min-height: 100vh;
+}
+
+@mixin grid-tow-rows {
+  display: grid;
+  grid-template-areas: "header"
+                       "content";
+  grid-template-rows: auto 1fr;
+}
+
+.container {
+  @include grid-tow-rows();
+  margin: auto;
+}
+
+@media (max-width: 1599px) {
+  .container {
+    font-size: 12px;
+    width: 1000px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    font-size: 14px;
+    width: 1200px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .container {
+    font-size: 16px;
+    width: 1400px;
+  }
+}
+
+@mixin gradient-text($gradient, $bg: 'light') {
+  @supports(mix-blend-mode: lighten) {
+    display: inline-block;
+    position: relative;
+    color: var(--font-color);
+    background: var(--bg-color);
+    mix-blend-mode: multiply;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: unquote($string: $gradient);
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    @if $bg=='dark' {
+      mix-blend-mode: lighten;
+
+      &::before {
+        mix-blend-mode: multiply;
+      }
+    }
+  }
+}
+
+.App__title {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  >h1 {
+    @include gradient-text('linear-gradient(to right,#23966c, #faaa54, #e23b4a, #db0768, #360670)', 'light');
+  }
+
+  &.dark {
+    >h1 {
+      @include gradient-text('radial-gradient(circle, #23966c, #faaa54, #e23b4a, #db0768, #360670)', 'dark');
+    }
+  }
+}
+
+.App__toggleBtn {
+  position: absolute;
+  right: 15px;
+  width: 65px;
+  height: 28px;
+  border-radius: 28px;
+  border: none;
+  outline: none;
+  background-color: #d5d5d5;
+  transition: background-color .5s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #fff;
+    transition: left .5s;
+  }
+
+  &.dark {
+    background-color: #f4b1e8;
+  }
+
+  &.dark::before {
+    left: calc(100% - 27px);
+  }
+}
+
+.App__content {
+  grid-area: content;
+  padding: 0 2em;
+  text-align: left;
+}
+
+.App__example {
+  @include grid-tow-rows();
+
+  > header {
+    grid-area: header;
+  }
+
+  > .App__exampleInfo {
+    grid-area: content;
+    display: flex;
+
+    > img {
+      width: 21em;
+      height: 14em;
+    }
+
+    > p {
+      margin-left: 2em;
+      font-size: 1.3em;
+    }
+  }
+}
