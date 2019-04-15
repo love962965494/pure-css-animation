@@ -40,8 +40,11 @@ export default function App() {
                   </h2>
                 </header>
                 <div className="App__exampleInfo">
-                  <img src={route.preview} alt="" />
-                  <p>{route.description}</p>
+                  <img className="App__examplePreview" src={route.preview} alt="" />
+                  <p className="App__exampleDescription">{route.description}</p>
+                  <p className="App__exampleReference">
+                    <a href={route.reference} target="_blank">{route.reference}</a>
+                  </p>
                 </div>
               </section>
             ))}
