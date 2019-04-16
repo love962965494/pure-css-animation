@@ -15,7 +15,7 @@ interface IRouteConfig {
   preview: any
 }
 
-const { AnimatedCssSeasons, FloatingHeart } = PageConfig
+const { AnimatedCssSeasons, FloatingHeart, BorderTransformations } = PageConfig
 
 const config: IRouteConfig[] = [
   {
@@ -35,6 +35,15 @@ const config: IRouteConfig[] = [
     reference: FloatingHeart.reference,
     component: importModule(FloatingHeart.component),
     preview: FloatingHeart.preview
+  },
+  {
+    id: '03',
+    path: '/app/borderTransformations',
+    title: 'Border Transformations',
+    description: BorderTransformations.description,
+    reference: BorderTransformations.reference,
+    component: importModule(BorderTransformations.component),
+    preview: BorderTransformations.preview
   }
 ]
 

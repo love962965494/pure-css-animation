@@ -1,5 +1,6 @@
 import AnimatedCssSeasonsPreview from './AnimatedCssSeasons/AnimatedCssSeasons.gif'
 import FloatingHeartPreview from './FloatingHeart/FloatingHeart.gif'
+import BorderTransformationsPreview from './BorderTransformations/BorderTransformations.png'
 
 interface IPageConfig {
   [key: string]: IPageItemConfig
@@ -30,6 +31,14 @@ const config: IPageConfig = {
     reference: 'https://codepen.io/yuanchuan/pen/wZJqNK',
     component: '/FloatingHeart/FloatingHeart',
     preview: FloatingHeartPreview
+  },
+  BorderTransformations: {
+    id: '03',
+    title: '边框图案',
+    description: '使用css-doodle实现的美丽图案',
+    reference: 'https://codepen.io/yuanchuan/pen/zpvQvV?editors=0010',
+    component: '/BorderTransformations/BorderTransformations',
+    preview: BorderTransformationsPreview
   }
 }
 

@@ -1,0 +1,46 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 25vmin);
+  grid-template-rows: repeat(3, 25vmin);
+  grid-gap: 1vmin;
+  align-content: center;
+  justify-content: center;
+  background: #0a0c27;
+  font-family: verdana;
+}
+
+css-doodle {
+  overflow: hidden;
+  cursor: pointer;
+  --hue: 5;
+}
+
+p {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1em;
+  color: rgba(165, 170, 243, .2);
+  font-size: .65em;
+}
+
+p a {
+  color: rgba(165, 170, 243, .4);
+
+  &:hover {
+    color: rgba(165, 170, 243, .6);
+  }
+}
+
+@media screen and (max-height: 420px) {
+  p {
+    display: none;
+  }
+}
+
