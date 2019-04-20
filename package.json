@@ -2,7 +2,7 @@
   "name": "pure-css-animation",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/love962965494/pure-css-animation.git",
+  "homepage": "https://love962965494.github.io/pure-css-animation",
   "dependencies": {
     "@types/jest": "24.0.11",
     "@types/node": "11.13.0",

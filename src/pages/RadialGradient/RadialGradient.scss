@@ -1,0 +1,66 @@
+:root {
+  --size: 16em;
+}
+
+@media screen and (max-width: 36.25em) {
+  :root {
+    --size: 11em;
+  }
+}
+
+html, body, ul, li, header, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f7f8f8;
+  font-family: Georgia, "Nimbus Roman No9 L", serif;
+}
+
+header {
+  position: relative;
+  padding: 8vmin 0 2vmin;
+  color: #093b3e;
+  overflow: hidden;
+
+  a {
+    color: currentColor;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: #fc3d3c;
+  }
+
+  p {
+    margin-top: .5em;
+    color: #093b3e7a;
+  }
+}
+
+.wrap, .patterns {
+  max-width: 67.5em;
+  margin: auto;
+  padding: 0 1.5em;
+  box-sizing: border-box;
+}
+
+.patterns {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--size), 1fr));
+  grid-gap: 1vmin;
+  margin: 2em auto 8vmin;
+  list-style: none;
+
+  > li {
+    position: relative;
+    padding-top: 100%;
+  }
+
+  css-doodle {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

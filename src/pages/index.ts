@@ -1,6 +1,7 @@
 import AnimatedCssSeasonsPreview from './AnimatedCssSeasons/AnimatedCssSeasons.gif'
 import FloatingHeartPreview from './FloatingHeart/FloatingHeart.gif'
 import BorderTransformationsPreview from './BorderTransformations/BorderTransformations.png'
+import RadialGradientPreview from './RadialGradient/RadialGradient.png'
 
 interface IPageConfig {
   [key: string]: IPageItemConfig
@@ -39,6 +40,14 @@ const config: IPageConfig = {
     reference: 'https://codepen.io/yuanchuan/pen/zpvQvV?editors=0010',
     component: '/BorderTransformations/BorderTransformations',
     preview: BorderTransformationsPreview
+  },
+  RadialGradient: {
+    id: '04',
+    title: '径向渐变',
+    description: '使用css-doodle实现的径向渐变图案',
+    reference: 'https://codepen.io/yuanchuan/pen/JxjJJL',
+    component: '/RadialGradient/RadialGradient',
+    preview: RadialGradientPreview
   }
 }
 

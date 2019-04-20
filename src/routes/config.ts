@@ -15,7 +15,7 @@ interface IRouteConfig {
   preview: any
 }
 
-const { AnimatedCssSeasons, FloatingHeart, BorderTransformations } = PageConfig
+const { AnimatedCssSeasons, FloatingHeart, BorderTransformations, RadialGradient } = PageConfig
 
 const config: IRouteConfig[] = [
   {
@@ -44,6 +44,15 @@ const config: IRouteConfig[] = [
     reference: BorderTransformations.reference,
     component: importModule(BorderTransformations.component),
     preview: BorderTransformations.preview
+  },
+  {
+    id: '04',
+    path: '/app/radialGradient',
+    title: 'Radial Gradient',
+    description: RadialGradient.description,
+    reference: RadialGradient.reference,
+    component: importModule(RadialGradient.component),
+    preview: RadialGradient.preview
   }
 ]
 
