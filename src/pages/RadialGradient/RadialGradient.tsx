@@ -2,7 +2,7 @@ import React from 'react'
 import Patterns from './patterns'
 import './RadialGradient.scss'
 
-const { Pattern1, Pattern2, Pattern3 } = Patterns
+const { Pattern1, Pattern2, Pattern3, Pattern4, Pattern5 } = Patterns
 
 export default function RadialGradient() {
   return (
@@ -33,6 +33,12 @@ export default function RadialGradient() {
         </li>
         <li>
           <Pattern3 />
+        </li>
+        <li>
+          <Pattern4 />
+        </li>
+        <li>
+          <Pattern5 />
         </li>
       </ul>
     </>
