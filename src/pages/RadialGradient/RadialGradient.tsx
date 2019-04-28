@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Patterns from './patterns'
 import './RadialGradient.scss'
+import { update } from '../Doodle'
 
-const { Pattern1, Pattern2, Pattern3, Pattern4, Pattern5 } = Patterns
+const { Pattern1, Pattern2, Pattern3, Pattern4, Pattern5, Pattern6 } = Patterns
 
 export default function RadialGradient() {
+  useEffect(() => {
+    document.body.addEventListener('click', update)
+
+    return () => {
+      document.body.removeEventListener('click', update)
+    }
+  }, [])
+
   return (
     <>
       <header>
@@ -39,6 +48,9 @@ export default function RadialGradient() {
         </li>
         <li>
           <Pattern5 />
+        </li>
+        <li>
+          <Pattern6 />
         </li>
       </ul>
     </>

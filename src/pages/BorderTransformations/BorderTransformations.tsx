@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './BorderTransformations.scss'
 import Patterns from './patterns'
+import { update } from '../Doodle'
 
 const {
   Pattern1,
@@ -16,14 +17,6 @@ const {
   Pattern11,
   Pattern12
 } = Patterns
-
-const update = ($ev: MouseEvent) => {
-  const target = $ev.target as EventTarget & { update?: () => void }
-
-  if (target && target.update) {
-    target.update()
-  }
-}
 
 export default function BorderTransformations() {
   useEffect(() => {

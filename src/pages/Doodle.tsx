@@ -10,4 +10,12 @@ declare global {
   }
 }
 
+export const update = ($ev: MouseEvent) => {
+  const target = $ev.target as EventTarget & { update?: () => void }
+
+  if (target && target.update) {
+    target.update()
+  }
+}
+
 export default ([rule = '']: TemplateStringsArray) => () => <css-doodle>{rule}</css-doodle>
